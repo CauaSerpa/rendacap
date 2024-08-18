@@ -1,0 +1,8 @@
+.env
+app.zip
+vendor/
+vendors/
+composer.json
+composer.lock
+*.html
+todo
