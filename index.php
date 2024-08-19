@@ -26,6 +26,10 @@
         <title>Register Boxed - ArchitectUI HTML Bootstrap 4 Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
         <meta name="description" content="ArchitectUI HTML Bootstrap 4 Dashboard Template">
+
+        <!-- Favicon Icon -->
+        <link rel="shortcut icon" href="<?= INCLUDE_PATH_DASHBOARD; ?>images/favicon.png" type="image/x-icon">
+
         <!-- Disable tap highlight on IE -->
         <meta name="msapplication-tap-highlight" content="no">
         <link rel="stylesheet" href="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/@fortawesome/fontawesome-free/css/all.min.css">
@@ -47,6 +51,13 @@
         <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/apexcharts/dist/apexcharts.min.js"></script>
         <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
         <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/countup.js/dist/countUp.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/chart.js/dist/Chart.min.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/bootstrap-table/dist/bootstrap-table.min.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>vendors/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
         <!-- custome.js -->
         <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>js/charts/apex-charts.js"></script>
         <script type="text/javascript" src="<?= INCLUDE_PATH_DASHBOARD; ?>js/circle-progress.js"></script>

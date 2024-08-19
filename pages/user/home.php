@@ -1,27 +1,828 @@
-<?php
-    // TEMPORARIO, CRIAR MAIN PARA PAGINAS, EX.: MAIN PARA PAGINAS DE LOGIN, MAIN PARA PAGINAS DO PAINEL
-    // Durante o processo de login
-    $stmt = $conn->prepare("SELECT * FROM tb_users WHERE id = ?");
-    $stmt->execute([$_SESSION['user_id']]);
-
-    if ($stmt->rowCount()) {
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-?>
-<h1>Olá <?= $user['firstname'] ?>,</h1>
-<h5>Seu código de convite é:</h5>
-<div class="form-row">
-    <div class="input-group col-md-4">
-        <input type="text" class="form-control"
-            id="clipboard-token" value="<?= INCLUDE_PATH_AUTH . 'registrar/' . $user['token']; ?>">
-        <div class="input-group-append">
-            <button type="button" data-clipboard-target="#clipboard-token" class="btn btn-primary clipboard-trigger">
-                <i class="fa fa-copy"></i>
-            </button>
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="pe-7s-home icon-gradient bg-ripe-malin"></i>
+            </div>
+            <div>
+                Início
+                <div class="page-title-subheading">Aqui você pode acompanhar as principais informações do site.</div>
+            </div>
         </div>
     </div>
 </div>
 
-<h5 class="mt-3">
-    <a href="<?= INCLUDE_PATH_AUTH; ?>sair" class="text-primary">Sair</a>
-</h5>
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-6 d-grid">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Link de Indicação</h5>
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                        id="clipboard-token" value="<?= INCLUDE_PATH_AUTH . 'registrar/' . $user['token']; ?>" readonly>
+                    <div class="input-group-append">
+                        <button type="button" data-clipboard-target="#clipboard-token" class="btn-icon btn btn-primary clipboard-trigger">
+                            <i class="pe-7s-copy-file btn-icon-wrapper"></i>
+                            Copiar Link
+                        </button>
+                    </div>
+                </div>
+                <small class="form-text text-muted">
+                    Clique em copiar link para copiar seu link.
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 d-grid">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <table class="mb-0 table">
+                    <thead>
+                        <tr>
+                            <th>Primeira Ativação</th>
+                            <th>Última Ativação</th>
+                            <th>Próxima Ativação</th>
+                            <th>Pacote Atual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>05/08/2024</td>
+                            <td>05/08/2024</td>
+                            <td>04/09/2024</td>
+                            <td>Prata - Genhe Até o 5º Nível</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-success border-success card">
+            <div class="icon-wrapper rounded-circle">
+                <div class="icon-wrapper-bg bg-success"></div>
+                <i class="fa fa-fw text-success"></i>
+            </div>
+            <div class="widget-chart-content">
+                <div class="widget-subheading">Bonificação das Indicações Diretas</div>
+                <div class="widget-numbers">
+                    <small class="opacity-5 pr-1">R$</small>
+                    <span class="count-up" data-value="120.00">120,00</span>
+                </div>
+                <div class="widget-description opacity-8 text-focus">
+                    Diretos
+                    <span class="text-success pl-1 pr-1">
+                        <span class="pr-1">1</span>
+                        <i class="fa fa-angle-up "></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-warning border-warning card">
+            <div class="icon-wrapper rounded-circle">
+                <div class="icon-wrapper-bg bg-warning"></div>
+                <i class="fa fa-fw text-warning" aria-hidden="true" title="Copy to use line-chart"></i>
+            </div>
+            <div class="widget-chart-content">
+                <div class="widget-subheading">Bonificações do 2º ao 10º nível</div>
+                <div class="widget-numbers">
+                    <small class="opacity-5 pr-1">R$</small>
+                    <span class="count-up" data-value="15.98">15,98</span>
+                </div>
+                <div class="widget-subheading">Bônus Rede</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-primary border-primary card">
+            <div class="icon-wrapper rounded-circle">
+                <div class="icon-wrapper-bg bg-primary"></div>
+                <i class="fa fa-fw text-primary" aria-hidden="true" title="Copy to use bar-chart"></i>
+            </div>
+            <div class="widget-chart-content">
+                <div class="widget-subheading">Saldo Total de Ganhos de Rede</div>
+                <div class="widget-numbers">
+                    <small class="opacity-5 pr-1">R$</small>
+                    <span class="count-up" data-value="135.98">135,98</span>
+                </div>
+                <div class="widget-subheading">Saldo Total</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-success border-success card">
+            <div class="icon-wrapper rounded-circle">
+                <div class="icon-wrapper-bg bg-success"></div>
+                <i class="fa fa-fw text-success" aria-hidden="true" title="Copy to use arrow-up"></i>
+            </div>
+            <div class="widget-chart-content">
+                <div class="widget-subheading">Saldo Disponível para Saque</div>
+                <div class="widget-numbers">
+                    <small class="opacity-5 pr-1">R$</small>
+                    <span class="count-up" data-value="0.00">0,00</span>
+                </div>
+                <div class="widget-subheading">Saldo Disponível</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Meus Títulos</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Meus Grupos 5 Participantes</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .chart-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+    }
+    .chart {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: conic-gradient(
+            #ff6384 0% 16.66%, /* Red */
+            #36a2eb 16.66% 33.33%, /* Blue */
+            #cc65fe 33.33% 50%, /* Purple */
+            #ffce56 50% 66.66%, /* Yellow */
+            #4bc0c0 66.66% 83.33%, /* Teal */
+            #f7464a 83.33% 100% /* Light Red */
+        );
+    }
+    .images {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    .images div {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background-size: cover;
+        background-position: center;
+    }
+    .images .img1 {
+        top: 20%;
+        left: 33%;
+        transform: translate(-50%, -50%);
+        background-image: url(https://via.placeholder.com/50?text=1);
+    }
+    .images .img2 {
+        top: 20%;
+        right: 33%;
+        transform: translate(50%, -50%);
+        background-image: url(https://via.placeholder.com/50?text=2);
+    }
+    .images .img3 {
+        top: 50%;
+        right: 15%;
+        transform: translate(50%, -50%);
+        background-image: url(https://via.placeholder.com/50?text=3);
+    }
+    .images .img4 {
+        bottom: 20%;
+        right: 33%;
+        transform: translate(50%, 50%);
+        background-image: url(https://via.placeholder.com/50?text=4);
+    }
+    .images .img5 {
+        bottom: 20%;
+        left: 33%;
+        transform: translate(-50%, 50%);
+        background-image: url(https://via.placeholder.com/50?text=5);
+    }
+    .images .img6 {
+        top: 50%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+        background-image: url(https://via.placeholder.com/50?text=6);
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Tele Sema Viva Sorte Hiper Cap</h5>
+                <div class="row">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="chart-container">
+                            <div class="chart"></div>
+                            <div class="images">
+                                <div class="img1"></div>
+                                <div class="img2"></div>
+                                <div class="img3"></div>
+                                <div class="img4"></div>
+                                <div class="img5"></div>
+                                <div class="img6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4 class="font-weight-semibold mb-4">Sistema Tele Sena</h4>
+                        <div class="mb-4">
+                            <div class="d-inline-block text-center mr-5">
+                                <h5 class="font-weight-bold">Produto</h5>
+                                <h5 class="font-weight-bold">11</h5>
+                            </div>
+                            <div class="d-inline-block text-center mr-5">
+                                <h5 class="font-weight-bold">Série</h5>
+                                <h5 class="font-weight-bold">0007</h5>
+                            </div>
+                            <div class="d-inline-block text-center mr-5">
+                                <h5 class="font-weight-bold">Número Título</h5>
+                                <h5 class="font-weight-bold">01785214</h5>
+                            </div>
+                            <div class="d-inline-block text-center mr-5">
+                                <h5 class="font-weight-bold">DV</h5>
+                                <h5 class="font-weight-bold">9</h5>
+                            </div>
+                        </div>
+                        <h5 class="font-weight-bold mb-4">Número da Sorte: 41764</h5>
+                        <ul class="list-group" style="list-style: none;">
+                            <li class="small"><span class="font-weight-semibold">Edição Nº 4</span> - Sorteio 16/06/2024</li>
+                            <li class="small"><span class="font-weight-semibold">Data da Compra</span> - 16/06/2024 08:23:11</li>
+                            <li class="small"><span class="font-weight-semibold">Os Resgates dos T.C. do Clube Renda CAP Brasil, serão destinados integralmentes ao TeleTon e GACC /SJC</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .dataTables_scrollBody {
+        margin-bottom: 1.25rem !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <h5 class="card-title">Últimos Cadastros</h5>
+                <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012/03/29</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008/11/28</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012/08/06</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010/10/14</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009/09/15</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008/12/13</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008/12/19</td>
+                            <td>$90,560</td>
+                        </tr>
+                        <tr>
+                            <td>Quinn Flynn</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2013/03/03</td>
+                            <td>$342,000</td>
+                        </tr>
+                        <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>36</td>
+                            <td>2008/10/16</td>
+                            <td>$470,600</td>
+                        </tr>
+                        <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>43</td>
+                            <td>2012/12/18</td>
+                            <td>$313,500</td>
+                        </tr>
+                        <tr>
+                            <td>Tatyana Fitzpatrick</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>19</td>
+                            <td>2010/03/17</td>
+                            <td>$385,750</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Silva</td>
+                            <td>Marketing Designer</td>
+                            <td>London</td>
+                            <td>66</td>
+                            <td>2012/11/27</td>
+                            <td>$198,500</td>
+                        </tr>
+                        <tr>
+                            <td>Paul Byrd</td>
+                            <td>Chief Financial Officer (CFO)</td>
+                            <td>New York</td>
+                            <td>64</td>
+                            <td>2010/06/09</td>
+                            <td>$725,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gloria Little</td>
+                            <td>Systems Administrator</td>
+                            <td>New York</td>
+                            <td>59</td>
+                            <td>2009/04/10</td>
+                            <td>$237,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bradley Greer</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>41</td>
+                            <td>2012/10/13</td>
+                            <td>$132,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dai Rios</td>
+                            <td>Personnel Lead</td>
+                            <td>Edinburgh</td>
+                            <td>35</td>
+                            <td>2012/09/26</td>
+                            <td>$217,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jenette Caldwell</td>
+                            <td>Development Lead</td>
+                            <td>New York</td>
+                            <td>30</td>
+                            <td>2011/09/03</td>
+                            <td>$345,000</td>
+                        </tr>
+                        <tr>
+                            <td>Yuri Berry</td>
+                            <td>Chief Marketing Officer (CMO)</td>
+                            <td>New York</td>
+                            <td>40</td>
+                            <td>2009/06/25</td>
+                            <td>$675,000</td>
+                        </tr>
+                        <tr>
+                            <td>Caesar Vance</td>
+                            <td>Pre-Sales Support</td>
+                            <td>New York</td>
+                            <td>21</td>
+                            <td>2011/12/12</td>
+                            <td>$106,450</td>
+                        </tr>
+                        <tr>
+                            <td>Doris Wilder</td>
+                            <td>Sales Assistant</td>
+                            <td>Sidney</td>
+                            <td>23</td>
+                            <td>2010/09/20</td>
+                            <td>$85,600</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Ramos</td>
+                            <td>Chief Executive Officer (CEO)</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2009/10/09</td>
+                            <td>$1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Joyce</td>
+                            <td>Developer</td>
+                            <td>Edinburgh</td>
+                            <td>42</td>
+                            <td>2010/12/22</td>
+                            <td>$92,575</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Chang</td>
+                            <td>Regional Director</td>
+                            <td>Singapore</td>
+                            <td>28</td>
+                            <td>2010/11/14</td>
+                            <td>$357,650</td>
+                        </tr>
+                        <tr>
+                            <td>Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>2011/06/07</td>
+                            <td>$206,850</td>
+                        </tr>
+                        <tr>
+                            <td>Fiona Green</td>
+                            <td>Chief Operating Officer (COO)</td>
+                            <td>San Francisco</td>
+                            <td>48</td>
+                            <td>2010/03/11</td>
+                            <td>$850,000</td>
+                        </tr>
+                        <tr>
+                            <td>Shou Itou</td>
+                            <td>Regional Marketing</td>
+                            <td>Tokyo</td>
+                            <td>20</td>
+                            <td>2011/08/14</td>
+                            <td>$163,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michelle House</td>
+                            <td>Integration Specialist</td>
+                            <td>Sidney</td>
+                            <td>37</td>
+                            <td>2011/06/02</td>
+                            <td>$95,400</td>
+                        </tr>
+                        <tr>
+                            <td>Suki Burks</td>
+                            <td>Developer</td>
+                            <td>London</td>
+                            <td>53</td>
+                            <td>2009/10/22</td>
+                            <td>$114,500</td>
+                        </tr>
+                        <tr>
+                            <td>Prescott Bartlett</td>
+                            <td>Technical Author</td>
+                            <td>London</td>
+                            <td>27</td>
+                            <td>2011/05/07</td>
+                            <td>$145,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Cortez</td>
+                            <td>Team Leader</td>
+                            <td>San Francisco</td>
+                            <td>22</td>
+                            <td>2008/10/26</td>
+                            <td>$235,500</td>
+                        </tr>
+                        <tr>
+                            <td>Martena Mccray</td>
+                            <td>Post-Sales support</td>
+                            <td>Edinburgh</td>
+                            <td>46</td>
+                            <td>2011/03/09</td>
+                            <td>$324,050</td>
+                        </tr>
+                        <tr>
+                            <td>Unity Butler</td>
+                            <td>Marketing Designer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009/12/09</td>
+                            <td>$85,675</td>
+                        </tr>
+                        <tr>
+                            <td>Howard Hatfield</td>
+                            <td>Office Manager</td>
+                            <td>San Francisco</td>
+                            <td>51</td>
+                            <td>2008/12/16</td>
+                            <td>$164,500</td>
+                        </tr>
+                        <tr>
+                            <td>Hope Fuentes</td>
+                            <td>Secretary</td>
+                            <td>San Francisco</td>
+                            <td>41</td>
+                            <td>2010/02/12</td>
+                            <td>$109,850</td>
+                        </tr>
+                        <tr>
+                            <td>Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td>62</td>
+                            <td>2009/02/14</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr>
+                            <td>Timothy Mooney</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>37</td>
+                            <td>2008/12/11</td>
+                            <td>$136,200</td>
+                        </tr>
+                        <tr>
+                            <td>Jackson Bradshaw</td>
+                            <td>Director</td>
+                            <td>New York</td>
+                            <td>65</td>
+                            <td>2008/09/26</td>
+                            <td>$645,750</td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Liang</td>
+                            <td>Support Engineer</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2011/02/03</td>
+                            <td>$234,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bruno Nash</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>38</td>
+                            <td>2011/05/03</td>
+                            <td>$163,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sakura Yamamoto</td>
+                            <td>Support Engineer</td>
+                            <td>Tokyo</td>
+                            <td>37</td>
+                            <td>2009/08/19</td>
+                            <td>$139,575</td>
+                        </tr>
+                        <tr>
+                            <td>Thor Walton</td>
+                            <td>Developer</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2013/08/11</td>
+                            <td>$98,540</td>
+                        </tr>
+                        <tr>
+                            <td>Finn Camacho</td>
+                            <td>Support Engineer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009/07/07</td>
+                            <td>$87,500</td>
+                        </tr>
+                        <tr>
+                            <td>Serge Baldwin</td>
+                            <td>Data Coordinator</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2012/04/09</td>
+                            <td>$138,575</td>
+                        </tr>
+                        <tr>
+                            <td>Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td>63</td>
+                            <td>2010/01/04</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>56</td>
+                            <td>2012/06/01</td>
+                            <td>$115,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Acosta</td>
+                            <td>Junior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>43</td>
+                            <td>2013/02/01</td>
+                            <td>$75,650</td>
+                        </tr>
+                        <tr>
+                            <td>Cara Stevens</td>
+                            <td>Sales Assistant</td>
+                            <td>New York</td>
+                            <td>46</td>
+                            <td>2011/12/06</td>
+                            <td>$145,600</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2011/03/21</td>
+                            <td>$356,250</td>
+                        </tr>
+                        <tr>
+                            <td>Lael Greer</td>
+                            <td>Systems Administrator</td>
+                            <td>London</td>
+                            <td>21</td>
+                            <td>2009/02/27</td>
+                            <td>$103,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas Alexander</td>
+                            <td>Developer</td>
+                            <td>San Francisco</td>
+                            <td>30</td>
+                            <td>2010/07/14</td>
+                            <td>$86,500</td>
+                        </tr>
+                        <tr>
+                            <td>Shad Decker</td>
+                            <td>Regional Director</td>
+                            <td>Edinburgh</td>
+                            <td>51</td>
+                            <td>2008/11/13</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>29</td>
+                            <td>2011/06/27</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>27</td>
+                            <td>2011/01/25</td>
+                            <td>$112,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.count-up').each(function() {
+            var $this = $(this);
+            var value = $this.data('value');
+            
+            $this.text('0,00'); // Inicia com zero
+
+            $({ count: 0 }).animate({ count: value }, {
+                duration: 2000, // Duração da animação em milissegundos
+                step: function() {
+                    $this.text(Number(this.count).toFixed(2).replace('.', ','));
+                },
+                complete: function() {
+                    $this.text(Number(this.count).toFixed(2).replace('.', ','));
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    // Datatables
+
+    $(document).ready(() => {
+        $("#example").DataTable({
+            responsive: true,
+            scrollY: "292px",
+            scrollCollapse: true,
+            ordering: false,
+            language: {
+                "sProcessing": "Processando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+                "sInfoPostFix": "",
+                "sSearch": "Pesquisar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Carregando...",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Próximo",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": ativar para classificar a coluna em ordem crescente",
+                    "sSortDescending": ": ativar para classificar a coluna em ordem decrescente"
+                }
+            }
+        });
+    });
+</script>

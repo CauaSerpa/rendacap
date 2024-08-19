@@ -1,3 +1,14 @@
+<?php
+    // TEMPORARIO, CRIAR MAIN PARA PAGINAS, EX.: MAIN PARA PAGINAS DE LOGIN, MAIN PARA PAGINAS DO PAINEL
+    // Durante o processo de login
+    $stmt = $conn->prepare("SELECT * FROM tb_users WHERE id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
+
+    if ($stmt->rowCount()) {
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+?>
+
 <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
 
     <!-- header -->
