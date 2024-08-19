@@ -28,7 +28,7 @@ Siga os passos abaixo para instalar e configurar o sistema:
 
    Antes de iniciar o ambiente, você precisará configurá-lo. Para isso:
   
-1. Crie um arquivo `.env ` no servidor com base no arquivo `.env_example`.
+1. Crie um arquivo `.env ` no servidor com base no arquivo `.env.example`.
 
    ```sh
    $ cp .env_example .env
