@@ -28,13 +28,13 @@ Siga os passos abaixo para instalar e configurar o sistema:
 
    Antes de iniciar o ambiente, você precisará configurá-lo. Para isso:
   
-1. Crie um arquivo .env no servidor com base no arquivo .env_example.
+1. Crie um arquivo `.env ` no servidor com base no arquivo `.env_example`.
 
    ```sh
    $ cp .env_example .env
    ```
 
-2. Abra o arquivo .env em seu editor de texto favorito e preencha-o com as configurações adequadas para o seu ambiente.
+2. Abra o arquivo `.env ` em seu editor de texto favorito e preencha-o com as configurações adequadas para o seu ambiente.
 
    ```sh
    $ nano .env
