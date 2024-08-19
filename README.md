@@ -31,7 +31,7 @@ Siga os passos abaixo para instalar e configurar o sistema:
 1. Crie um arquivo `.env ` no servidor com base no arquivo `.env.example`.
 
    ```sh
-   $ cp .env_example .env
+   $ cp .env.example .env
    ```
 
 2. Abra o arquivo `.env ` em seu editor de texto favorito e preencha-o com as configurações adequadas para o seu ambiente.
