@@ -32,65 +32,70 @@
         }
     }
 ?>
-<form id="signinForm">
-    <div class="modal-content">
-        <div class="modal-body">
-            <div class="h5 modal-title text-center">
-                <h4 class="mt-2">
-                    <div>Bem vindo(a) de volta,</div>
-                    <span>Não tem uma conta?
-                        <a href="<?= INCLUDE_PATH_AUTH; ?>registrar" class="text-primary">Inscreva-se agora</a>
-                    </span>
-                </h4>
-            </div>
-            <div class="form-row">
-                <div class="col-md-12">
-                    <div class="position-relative form-group">
-                        <input name="email" id="email"
-                            placeholder="Email aqui..." type="email" class="form-control">
-                    </div>
+
+<div class="modal-dialog w-100 mx-auto">
+    <form id="signinForm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="h5 modal-title text-center">
+                    <h4 class="mt-2">
+                        <div>Bem vindo(a) de volta,</div>
+                        <span>Não tem uma conta?
+                            <a href="<?= INCLUDE_PATH_AUTH; ?>registrar" class="text-primary">Inscreva-se agora</a>
+                        </span>
+                    </h4>
                 </div>
-                <div class="col-md-12">
-                    <div class="position-relative form-group mb-0">
-                        <input name="password" id="password"
-                            placeholder="Senha aqui..." type="password" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="mt-1 position-relative form-check">
-                        <input name="check" id="showPasswordToggle" type="checkbox" class="form-check-input">
-                        <label for="showPasswordToggle" class="form-check-label">Exibir senha</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between">
-            <div class="d-flex align-items-center">
-                <div class="position-relative form-check">
-                    <input name="remember_me" id="remember_me" type="checkbox" class="form-check-input">
-                    <label for="remember_me" class="form-check-label">Mantenha-me conectado</label>
-                </div>
-            </div>
-            <div class="d-flex align-items-center">
-                <div>
-                    <a href="<?= INCLUDE_PATH_AUTH; ?>recuperar-senha" class="btn-pill btn-hover-shine btn btn-link btn-lg">Recuperar senha</a>
-                </div>
-                <div>
-                    <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 72px;">Entrar</button>
-                    <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 72px;">
-                        <div class="loader">
-                            <div class="ball-pulse">
-                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                            </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="position-relative form-group">
+                            <input name="login" id="login"
+                                placeholder="Email ou Username" type="text" class="form-control">
                         </div>
-                    </button>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="position-relative form-group mb-0">
+                            <input name="password" id="password"
+                                placeholder="Senha" type="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mt-1 position-relative form-check">
+                            <input name="check" id="showPasswordToggle" type="checkbox" class="form-check-input">
+                            <label for="showPasswordToggle" class="form-check-label">Exibir senha</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="position-relative form-check">
+                        <input name="remember_me" id="remember_me" type="checkbox" class="form-check-input">
+                        <label for="remember_me" class="form-check-label">Mantenha-me conectado</label>
+                    </div>
+                </div>
+                <input type="hidden" name="http_referer" value="<?= isset($_SESSION['http_referer']) ? $_SESSION['http_referer'] : null; ?>">
+                <input type="hidden" name="action" value="login">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a href="<?= INCLUDE_PATH_AUTH; ?>recuperar-senha" class="btn-pill btn-hover-shine btn btn-link btn-lg">Recuperar senha</a>
+                    </div>
+                    <div>
+                        <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 72px;">Entrar</button>
+                        <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 72px;">
+                            <div class="loader">
+                                <div class="ball-pulse">
+                                    <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                    <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                    <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 <script type="text/javascript">
     $(document).ready(() => {
@@ -127,7 +132,7 @@
                 success: function(response) {
                     if(response.status == "success") {
                         // Redireciona o usuário após o toastr desaparecer
-                        window.location.href = "<?= INCLUDE_PATH_DASHBOARD; ?>";
+                        window.location.href = "<?= INCLUDE_PATH_DASHBOARD . ((isset($_SESSION['http_referer']) ? $_SESSION['http_referer'] : null)); ?>";
 
                         // Desabilitar loader e habilitar botão submit
                         loginButton.removeClass("d-none");
@@ -135,6 +140,35 @@
                     } else if (response.status == "2fa-required") {
                         // Redireciona o usuário após o toastr desaparecer
                         window.location.href = "<?= INCLUDE_PATH_AUTH; ?>verificacao-2fa";
+
+                        // Desabilitar loader e habilitar botão submit
+                        loginButton.removeClass("d-none");
+                        loaderButton.addClass("d-none");
+                    } else if (response.status == "create-signature") {
+                        // Redireciona o usuário após o toastr desaparecer
+                        window.location.href = "<?= INCLUDE_PATH_AUTH; ?>planos";
+
+                        // Desabilitar loader e habilitar botão submit
+                        loginButton.removeClass("d-none");
+                        loaderButton.addClass("d-none");
+                    } else if (response.status == "email-verification") {
+                        // Redireciona o usuário após o toastr desaparecer
+                        // window.location.href = "<?= INCLUDE_PATH_AUTH; ?>email-enviado"; // Desabilitado em fase de testes
+                        window.location.href = "<?= INCLUDE_PATH_AUTH; ?>planos";
+
+                        // Desabilitar loader e habilitar botão submit
+                        loginButton.removeClass("d-none");
+                        loaderButton.addClass("d-none");
+                    } else if (response.status == "finalize-registration") {
+                        // Redireciona o usuário após o toastr desaparecer
+                        window.location.href = "<?= INCLUDE_PATH_AUTH; ?>finalizar-cadastro";
+
+                        // Desabilitar loader e habilitar botão submit
+                        loginButton.removeClass("d-none");
+                        loaderButton.addClass("d-none");
+                    } else if (response.status == "send-new-proof") {
+                        // Redireciona o usuário após o toastr desaparecer
+                        window.location.href = "<?= INCLUDE_PATH_AUTH; ?>enviar-novo-comprovante";
 
                         // Desabilitar loader e habilitar botão submit
                         loginButton.removeClass("d-none");

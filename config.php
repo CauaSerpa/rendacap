@@ -43,10 +43,107 @@
 	$default_timezone = $_ENV['DEFAULT_TIMEZONE'];
     date_default_timezone_set($default_timezone);
 
+    // Tamanho maximo de arquivo
+	$max_file_size = $_ENV['MAX_FILE_SIZE'];
+
+
+
+    // Asaas
+	$config['asaas_api_url'] = $_ENV['ASAAS_API_URL'];
+	$config['asaas_api_key'] = $_ENV['ASAAS_API_KEY'];
+    $config['project_name'] = $_ENV['PROJECT_NAME'];
+	$config['groupname'] = $_ENV['GROUPNAME'] ?? null;
+
 
 
     // Incluir codigo de funcionalidades
     include('back-end/utility-functions/mail.php');
+
+
+
+    // Array de tradução dos meses
+    $month_names = array(
+        1 => 'janeiro', 2 => 'fevereiro', 3 => 'março', 4 => 'abril', 5 => 'maio', 6 => 'junho',
+        7 => 'julho', 8 => 'agosto', 9 => 'setembro', 10 => 'outubro', 11 => 'novembro', 12 => 'dezembro'
+    );
+
+    function formatToBRL($price) {
+        $formattedPrice = number_format($price, 2, ',', '.');
+        // Remove os centavos se forem zero
+        if (strpos($formattedPrice, ',00') !== false) {
+            $formattedPrice = str_replace(',00', '', $formattedPrice);
+        }
+        return 'R$ ' . $formattedPrice;
+    }
+
+    function formatOcultCpf($cpf) {
+        // Remove caracteres não numéricos
+        $cpf = preg_replace('/\D/', '', $cpf);
+    
+        // Verifica se o CPF tem o tamanho correto
+        if (strlen($cpf) != 11) {
+            return 'CPF inválido';
+        }
+
+        // Formata o CPF com base no padrão ***.000.000-**
+        $formattedCpf = '***.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-**';
+
+        return $formattedCpf;
+    }
+
+    function maskEmail($email) {
+        // Verifica se o e-mail é válido
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "E-mail inválido";
+        }
+    
+        // Divide o e-mail em partes
+        list($username, $domain) = explode('@', $email);
+        
+        // Máscara do nome de usuário
+        $maskedUsername = str_repeat('*', strlen($username));
+    
+        // Divide o domínio em partes
+        list($domainName, $tld) = explode('.', $domain);
+        
+        // Máscara do domínio
+        $maskedDomainName = str_repeat('*', strlen($domainName));
+        $maskedTld = str_repeat('*', strlen($tld));
+    
+        // Monta o e-mail mascarado
+        return $maskedUsername . '@' . $maskedDomainName . '.' . $maskedTld;
+    }
+
+    function cardFlagSVG($user) {
+        // Caminho para o diretório SVG
+        $svg_dir = 'images/svgs/card-flags/';
+    
+        // Verifique se a bandeira do cartão está presente
+        if ($user['payment_method'] == 'PIX') {
+            // Se não houver bandeira, exibir o ícone de Pix
+            include('images/svgs/pix.svg');
+            echo '<h3 class="font-weight-bold mb-0">Pix</h3>';
+        } else if ($user['payment_method'] == 'VOUCHER') {
+            echo '<h3 class="font-weight-bold mb-0">Voucher</h3>';
+        } else if ($user['payment_method'] == 'FREE_PLAN') {
+            echo '<h3 class="font-weight-bold mb-0">Plano Grátis</h3>';
+        } else {
+            // Convertendo a bandeira para minúsculas
+            $user['card_brand'] = strtolower($user['card_brand']);
+    
+            // Nome do arquivo SVG baseado na variável
+            $svg_file = $svg_dir . $user['card_brand'] . '.svg';
+    
+            // Verifique se o arquivo SVG existe
+            if (file_exists($svg_file)) {
+                include($svg_file);
+                echo '<h3 class="font-weight-bold ml-2 mb-0">**** ' . $user['card_last_digits'] . '</h3>';
+            } else {
+                // Exiba uma mensagem de erro ou uma imagem padrão
+                echo 'SVG não encontrado';
+            }
+        }
+    }
 
 
 

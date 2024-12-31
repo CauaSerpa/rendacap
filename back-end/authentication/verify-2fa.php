@@ -5,18 +5,25 @@
     header('Content-Type: application/json');
 
     // Verificação do código 2FA
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['two_factor_code'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['two_factor_code']) && isset($_POST['action']) && $_POST['action'] === "verify-2fa") {
         $twoFactorCode = $_POST['two_factor_code'];
 
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id_2fa'])) {
             $stmt = $conn->prepare("SELECT * FROM tb_users WHERE id = ?");
-            $stmt->execute([$_SESSION['user_id']]);
+            $stmt->execute([$_SESSION['user_id_2fa']]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($_SESSION['two_factor_code'] == $twoFactorCode) {
                 // Código 2FA está correto, permitir login
+
                 // Limpar o código 2FA da sessão e do banco de dados
                 unset($_SESSION['two_factor_code']);
+                unset($_SESSION['user_id_2fa']);
+                unset($_SESSION['user_email_2fa']);
+
+                // Armazenar o código 2FA na sessão e no banco de dados
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_email'] = $user['email'];
 
                 // Lógica de "lembrar-me"
                 $rememberMe = isset($_SESSION['remember_me']) ? $_SESSION['remember_me'] : false;

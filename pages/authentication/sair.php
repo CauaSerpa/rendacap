@@ -1,6 +1,7 @@
 <?php
     session_unset();
     session_destroy();
+    session_start();
 
     if (isset($_COOKIE['remember_me'])) {
         // Remove o cookie do navegador

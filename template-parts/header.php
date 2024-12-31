@@ -33,261 +33,33 @@
         <div class="app-header-left">
             <div class="search-wrapper">
                 <div class="input-holder">
-                    <input type="text" class="search-input" placeholder="Type to search">
+                    <input type="text" class="search-input" placeholder="Digite para pesquisar" autocomplete="off">
                     <button class="search-icon">
                         <span></span>
                     </button>
                 </div>
                 <button class="close"></button>
             </div>
-            <ul class="header-megamenu nav">
-                <li class="nav-item">
-                    <a href="javascript:void(0);" data-placement="bottom" rel="popover-focus"
-                        data-offset="300" data-toggle="popover-custom" class="nav-link">
-                        <i class="nav-link-icon pe-7s-gift"></i>
-                        Mega Menu
-                        <i class="fa fa-angle-down ml-2 opacity-5"></i>
-                    </a>
-                    <div class="rm-max-width">
-                        <div class="d-none popover-custom-content">
-                            <div class="dropdown-mega-menu">
-                                <div class="grid-menu grid-menu-3col">
-                                    <div class="no-gutters row">
-                                        <div class="col-sm-6 col-xl-4">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item-header nav-item"> Overview</li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <i class="nav-link-icon lnr-inbox"></i>
-                                                        <span> Contacts</span>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <i class="nav-link-icon lnr-book"></i>
-                                                        <span> Incidents</span>
-                                                        <div class="ml-auto badge badge-pill badge-danger">5</div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <i class="nav-link-icon lnr-picture"></i>
-                                                        <span> Companies</span>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a disabled="" href="javascript:void(0);" class="nav-link disabled">
-                                                        <i class="nav-link-icon lnr-file-empty"></i>
-                                                        <span> Dashboards</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item-header nav-item"> Favourites</li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link"> Reports Conversions</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        Quick Start
-                                                        <div class="ml-auto badge badge-success">New</div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Users &amp; Groups</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Proprieties</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-6 col-xl-4">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item-header nav-item">Sales &amp; Marketing</li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Queues</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Resource Groups</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        Goal Metrics
-                                                        <div class="ml-auto badge badge-warning">3</div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Campaigns</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="btn-group nav-item">
-                    <a class="nav-link" data-toggle="dropdown" aria-expanded="false">
-                        <span class="badge badge-pill badge-danger ml-0 mr-2">4</span>
-                        Settings
-                        <i class="fa fa-angle-down ml-2 opacity-5"></i>
-                    </a>
-                    <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu">
-                        <div class="dropdown-menu-header">
-                            <div class="dropdown-menu-header-inner bg-secondary">
-                                <div class="menu-header-image opacity-5" style="background-image: url('images/dropdown-header/abstract2.jpg');"></div>
-                                <div class="menu-header-content">
-                                    <h5 class="menu-header-title">Overview</h5>
-                                    <h6 class="menu-header-subtitle">Dropdown menus for everyone</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="scroll-area-xs">
-                            <div class="scrollbar-container">
-                                <h6 tabindex="-1" class="dropdown-header">Key Figures</h6>
-                                <button type="button" tabindex="0" class="dropdown-item">Service Calendar</button>
-                                <button type="button" tabindex="0" class="dropdown-item">Knowledge Base</button>
-                                <button type="button" tabindex="0" class="dropdown-item">Accounts</button>
-                                <div tabindex="-1" class="dropdown-divider"></div>
-                                <button type="button" tabindex="0" class="dropdown-item">Products</button>
-                                <button type="button" tabindex="0" class="dropdown-item">Rollup Queries</button>
-                            </div>
-                        </div>
-                        <ul class="nav flex-column">
-                            <li class="nav-item-divider nav-item"></li>
-                            <li class="nav-item-btn nav-item">
-                                <button class="btn-wide btn-shadow btn btn-danger btn-sm">Cancel</button>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="dropdown nav-item">
-                    <a aria-haspopup="true" data-toggle="dropdown" class="nav-link" aria-expanded="false">
-                        <i class="nav-link-icon pe-7s-settings"></i>
-                        Projects
-                        <i class="fa fa-angle-down ml-2 opacity-5"></i>
-                    </a>
-                    <div tabindex="-1" role="menu" aria-hidden="true"
-                        class="dropdown-menu-rounded dropdown-menu-lg rm-pointers dropdown-menu">
-                        <div class="dropdown-menu-header">
-                            <div class="dropdown-menu-header-inner bg-success">
-                                <div class="menu-header-image opacity-1" style="background-image: url('images/dropdown-header/abstract3.jpg');"></div>
-                                <div class="menu-header-content text-left">
-                                    <h5 class="menu-header-title">Overview</h5>
-                                    <h6 class="menu-header-subtitle">Unlimited options</h6>
-                                    <div class="menu-header-btn-pane">
-                                        <button class="mr-2 btn btn-dark btn-sm">Settings</button>
-                                        <button class="btn-icon btn-icon-only btn btn-warning btn-sm">
-                                            <i class="pe-7s-config btn-icon-wrapper"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" tabindex="0" class="dropdown-item">
-                            <i class="dropdown-icon lnr-file-empty"></i>
-                            Graphic Design
-                        </button>
-                        <button type="button" tabindex="0" class="dropdown-item">
-                            <i class="dropdown-icon lnr-file-empty"></i>
-                            App Development
-                        </button>
-                        <button type="button" tabindex="0" class="dropdown-item">
-                            <i class="dropdown-icon lnr-file-empty"></i>
-                            Icon Design
-                        </button>
-                        <div tabindex="-1" class="dropdown-divider"></div>
-                        <button type="button" tabindex="0" class="dropdown-item">
-                            <i class="dropdown-icon lnr-file-empty"></i>
-                            Miscellaneous
-                        </button>
-                        <button type="button" tabindex="0" class="dropdown-item">
-                            <i class="dropdown-icon lnr-file-empty"></i>
-                            Frontend Dev
-                        </button>
-                    </div>
-                </li>
-            </ul>
         </div>
         <div class="app-header-right">
             <div class="header-dots">
                 <div class="dropdown">
-                    <button type="button" aria-haspopup="true" aria-expanded="false"
-                        data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
-                        <span class="icon-wrapper icon-wrapper-alt rounded-circle">
-                            <span class="icon-wrapper-bg bg-primary"></span>
-                            <i class="icon text-primary ion-android-apps"></i>
-                        </span>
-                    </button>
-                    <div tabindex="-1" role="menu" aria-hidden="true"
-                        class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-menu-header">
-                            <div class="dropdown-menu-header-inner bg-plum-plate">
-                                <div class="menu-header-image" style="background-image: url('images/dropdown-header/abstract4.jpg');"></div>
-                                <div class="menu-header-content text-white">
-                                    <h5 class="menu-header-title">Grid Dashboard</h5>
-                                    <h6 class="menu-header-subtitle">Easy grid navigation inside dropdowns</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-menu grid-menu-xl grid-menu-3col">
-                            <div class="no-gutters row">
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Automation
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-piggy icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Reports
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-config icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Settings
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-browser icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Content
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-hourglass icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Activity
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-xl-4">
-                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                        <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
-                                        Contacts
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="nav flex-column">
-                            <li class="nav-item-divider nav-item"></li>
-                            <li class="nav-item-btn text-center nav-item">
-                                <button class="btn-shadow btn btn-primary btn-sm">Follow-ups</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="dropdown">
+                    <?php
+                        // Contar o número de notificações não lidas
+                        $count_stmt = $conn->prepare("
+                            SELECT COUNT(*) AS unread_count
+                            FROM tb_notification_recipients nr
+                            WHERE nr.user_id = ? AND nr.is_read = 0
+                        ");
+                        $count_stmt->execute([$_SESSION['user_id']]);
+                        $unread_count = $count_stmt->fetch(PDO::FETCH_ASSOC)['unread_count'];
+                    ?>
                     <button type="button" aria-haspopup="true" aria-expanded="false"
                         data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
                         <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                             <span class="icon-wrapper-bg bg-danger"></span>
-                            <i class="icon text-danger icon-anim-pulse ion-android-notifications"></i>
-                            <span class="badge badge-dot badge-dot-sm badge-danger">Notifications</span>
+                            <i class="icon text-danger ion-android-notifications <?= ($unread_count > 0) ? "icon-anim-pulse" : ""; ?>"></i>
+                            <span class="badge badge-dot badge-dot-sm badge-danger <?= ($unread_count == 0) ? "d-none" : ""; ?>">Notificações</span>
                         </span>
                     </button>
                     <div tabindex="-1" role="menu" aria-hidden="true"
@@ -296,32 +68,32 @@
                             <div class="dropdown-menu-header-inner bg-deep-blue">
                                 <div class="menu-header-image opacity-1" style="background-image: url('images/dropdown-header/city3.jpg');"></div>
                                 <div class="menu-header-content text-dark">
-                                    <h5 class="menu-header-title">Notifications</h5>
-                                    <h6 class="menu-header-subtitle">You have
-                                        <b>21</b> unread messages
+                                    <h5 class="menu-header-title">Notificações</h5>
+                                    <h6 class="menu-header-subtitle">Você tem
+                                        <b><?= $unread_count; ?></b> mensagens não lidas
                                     </h6>
                                 </div>
                             </div>
                         </div>
                         <ul class="tabs-animated-shadow tabs-animated nav nav-justified tabs-shadow-bordered p-3">
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a role="tab" class="nav-link active" data-toggle="tab" href="#tab-messages-header">
                                     <span>Messages</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
-                                <a role="tab" class="nav-link" data-toggle="tab" href="#tab-events-header">
-                                    <span>Events</span>
+                                <a role="tab" class="nav-link active" data-toggle="tab" href="#tab-events-header">
+                                    <span>Notificações</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a role="tab" class="nav-link" data-toggle="tab" href="#tab-errors-header">
                                     <span>System Errors</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab-messages-header" role="tabpanel">
+                            <!-- <div class="tab-pane active" id="tab-messages-header" role="tabpanel">
                                 <div class="scroll-area-sm">
                                     <div class="scrollbar-container">
                                         <div class="p-3">
@@ -472,134 +244,89 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane" id="tab-events-header" role="tabpanel">
+                            </div> -->
+                            <div class="tab-pane active" id="tab-events-header" role="tabpanel">
                                 <div class="scroll-area-sm">
                                     <div class="scrollbar-container">
                                         <div class="p-3">
                                             <div class="vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
-                                                <div class="vertical-timeline-item vertical-timeline-element">
+                                                <!-- <div class="vertical-timeline-item vertical-timeline-element">
                                                     <div>
                                                         <span class="vertical-timeline-element-icon bounce-in">
                                                             <i class="badge badge-dot badge-dot-xl badge-success"></i>
                                                         </span>
                                                         <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title">All Hands Meeting</h4>
+                                                            <h4 class="timeline-title">Complete seu cadastro</h4>
                                                             <p>
-                                                                Lorem ipsum dolor sic amet, today at
-                                                                <a href="javascript:void(0);">12:00 PM</a>
+                                                                Finalize o registro da sua conta para aumentar a segurança e habilitar a configuração de saques futuros. Acesse a aba 
+                                                                <a href="<?= INCLUDE_PATH_DASHBOARD; ?>minha-conta">Minha Conta</a> 
+                                                                para concluir o processo.
                                                             </p>
                                                             <span class="vertical-timeline-element-date"></span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-warning"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <p>Another meeting today, at
-                                                                <b class="text-danger">12:00 PM</b>
-                                                            </p>
-                                                            <p>Yet another one, at
-                                                                <span class="text-success">15:00 PM</span>
-                                                            </p>
-                                                            <span class="vertical-timeline-element-date"></span>
+                                                </div> -->
+
+                                                <?php
+                                                    // Selecionar notificações do usuário
+                                                    $stmt = $conn->prepare("
+                                                        SELECT n.id, n.title, n.content, n.type, n.created_at, nr.is_read
+                                                        FROM tb_notifications n
+                                                        INNER JOIN tb_notification_recipients nr ON n.id = nr.notification_id
+                                                        WHERE nr.user_id = ?
+                                                        ORDER BY n.created_at DESC
+                                                    ");
+                                                    $stmt->execute([$_SESSION['user_id']]);
+                                                    $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                ?>
+                                                
+                                                <?php if ($notifications) : ?>
+                                                    <?php foreach ($notifications as $notification) : ?>
+                                                        <div class="vertical-timeline-item vertical-timeline-element">
+                                                            <div>
+                                                                <span class="vertical-timeline-element-icon bounce-in">
+                                                                    <i class="badge badge-dot badge-dot-xl badge-success"></i>
+                                                                </span>
+                                                                <div class="vertical-timeline-element-content bounce-in">
+                                                                    <h4 class="timeline-title"><?= $notification['title']; ?></h4>
+                                                                    <p><?= nl2br($notification['content']); ?></p>
+                                                                    <span class="vertical-timeline-element-date"></span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-danger"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title">Build the production release</h4>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                                                labore et dolore magna elit enim at minim veniam quis nostrud
-                                                            </p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-primary"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title text-success">Something not important</h4>
-                                                            <p>Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud</p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-success"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title">All Hands Meeting</h4>
-                                                            <p>
-                                                                Lorem ipsum dolor sic amet, today at
-                                                                <a href="javascript:void(0);">12:00 PM</a>
-                                                            </p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-warning"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <p>Another meeting today, at
-                                                                <b class="text-danger">12:00 PM</b>
-                                                            </p>
-                                                            <p>Yet another one, at
-                                                                <span class="text-success">15:00 PM</span>
-                                                            </p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-danger"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title">Build the production release</h4>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                                                labore et dolore magna elit enim at minim veniam quis nostrud
-                                                            </p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vertical-timeline-item vertical-timeline-element">
-                                                    <div>
-                                                        <span class="vertical-timeline-element-icon bounce-in">
-                                                            <i class="badge badge-dot badge-dot-xl badge-primary"></i>
-                                                        </span>
-                                                        <div class="vertical-timeline-element-content bounce-in">
-                                                            <h4 class="timeline-title text-success">Something not important</h4>
-                                                            <p>Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis nostrud</p>
-                                                            <span class="vertical-timeline-element-date"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <p class="text-center">Você não possui notificações no momento.</p>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-errors-header" role="tabpanel">
+
+                            <?php if ($unread_count > 0) : ?>
+                            <script>
+                                $(document).ready(function() {
+                                    // Detectar clique no botão de notificação
+                                    $(document).on('click', 'button[data-toggle="dropdown"]', function() {
+                                        // Fazer a requisição AJAX para marcar notificações como lidas
+                                        $.ajax({
+                                            url: '<?= INCLUDE_PATH_DASHBOARD; ?>back-end/user/read-notification.php',
+                                            method: 'POST',
+                                            data: { action: 'read-notification' },
+                                            success: function(response) {
+                                                console.log('Notificações marcadas como lidas:', response);
+                                            },
+                                            error: function(xhr, status, error) {
+                                                console.error('Erro ao marcar notificações como lidas:', error);
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
+                            <?php endif; ?>
+
+                            <!-- <div class="tab-pane" id="tab-errors-header" role="tabpanel">
                                 <div class="scroll-area-sm">
                                     <div class="scrollbar-container">
                                         <div class="no-results pt-3 pb-0">
@@ -616,17 +343,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <ul class="nav flex-column">
+                        <!-- <ul class="nav flex-column">
                             <li class="nav-item-divider nav-item"></li>
                             <li class="nav-item-btn text-center nav-item">
                                 <button class="btn-shadow btn-wide btn-pill btn btn-focus btn-sm">View Latest Changes</button>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <button type="button" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
                         <span class="icon-wrapper icon-wrapper-alt rounded-circle">
                             <span class="icon-wrapper-bg bg-focus"></span>
@@ -671,15 +398,15 @@
                             Italy
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <div class="dropdown">
-                    <button type="button" aria-haspopup="true" data-toggle="tooltip" data-placement="bottom"
-                        title="Tooltip on bottom" aria-expanded="false" class="p-0 btn btn-link dd-chart-btn">
+                    <a href="<?= INCLUDE_PATH_DASHBOARD; ?>suporte" aria-haspopup="true" data-toggle="tooltip" data-placement="bottom"
+                        title="Ajuda" aria-expanded="false" class="p-0 btn btn-link dd-chart-btn">
                         <span class="icon-wrapper icon-wrapper-alt rounded-circle">
-                            <span class="icon-wrapper-bg bg-success"></span>
-                            <i class="icon text-success ion-ios-analytics"></i>
+                            <span class="icon-wrapper-bg bg-info"></span>
+                            <i class="icon text-info ion-android-bulb"></i>
                         </span>
-                    </button>
+                    </a>
                     <div tabindex="-1" role="menu" aria-hidden="true"
                         class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
                         <div class="dropdown-menu-header">
@@ -732,7 +459,7 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="images/avatars/1.jpg" alt="">
+                                    <img width="42" class="avatar rounded-circle" src="<?= $user['avatar']; ?>" alt="Profile Avatar">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true"
@@ -744,25 +471,25 @@
                                                 <div class="widget-content p-0">
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
-                                                            <img width="42" class="rounded-circle"
-                                                                src="images/avatars/1.jpg"  alt="">
+                                                            <img width="42" class="avatar rounded-circle"
+                                                                src="<?= $user['avatar']; ?>"  alt="Profile Avatar">
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">Alina Mcloughlin</div>
-                                                            <div class="widget-subheading opacity-8">A short profile description</div>
+                                                            <div class="widget-heading"><?= $user['shortname']; ?></div>
+                                                            <div class="widget-subheading opacity-8"><?= $user['email']; ?></div>
                                                         </div>
                                                         <div class="widget-content-right mr-2">
-                                                            <button class="btn-pill btn-shadow btn-shine btn btn-focus">Logout</button>
+                                                            <a href="<?= INCLUDE_PATH_AUTH; ?>sair" class="btn-pill btn-shadow btn-shine btn btn-focus">Sair</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="scroll-area-xs" style="height: 150px;">
+                                    <div class="scroll-area-xs" style="height: 100%;">
                                         <div class="scrollbar-container ps">
                                             <ul class="nav flex-column">
-                                                <li class="nav-item-header nav-item">Activity</li>
+                                                <!-- <li class="nav-item-header nav-item">Activity</li>
                                                 <li class="nav-item">
                                                     <a href="javascript:void(0);" class="nav-link">
                                                         Chat
@@ -771,29 +498,32 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="javascript:void(0);" class="nav-link">Recover Password</a>
-                                                </li>
+                                                </li> -->
                                                 <li class="nav-item-header nav-item">
-                                                    My Account
+                                                    Conta
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        Settings
-                                                        <div class="ml-auto badge badge-success">New</div>
+                                                    <a href="<?= INCLUDE_PATH_DASHBOARD; ?>financeiro" class="nav-link">Financeiro</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="<?= INCLUDE_PATH_DASHBOARD; ?>minha-conta" class="nav-link">
+                                                        Configurações
                                                     </a>
                                                 </li>
+                                                <!-- <li class="nav-item">
+                                                    <a href="<?= INCLUDE_PATH_DASHBOARD; ?>ajuda" class="nav-link">Ajuda</a>
+                                                </li> -->
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        Messages
-                                                        <div class="ml-auto badge badge-warning">512</div>
+                                                    <a href="<?= INCLUDE_PATH_DASHBOARD; ?>suporte" class="nav-link">
+                                                        Suporte
+                                                        <div class="ml-auto badge badge-success">Novo</div>
+                                                        <!-- <div class="ml-auto badge badge-warning">512</div> -->
                                                     </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Logs</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <ul class="nav flex-column">
+                                    <!-- <ul class="nav flex-column">
                                         <li class="nav-item-divider mb-0 nav-item"></li>
                                     </ul>
                                     <div class="grid-menu grid-menu-2col">
@@ -817,19 +547,19 @@
                                         <li class="nav-item-btn text-center nav-item">
                                             <button class="btn-wide btn btn-primary btn-sm"> Open Messages</button>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading"> <?= $user['firstname'] . " " . $user['lastname']; ?></div>
-                            <div class="widget-subheading"> VP People Manager</div>
+                            <div class="widget-heading"> <?= $user['shortname']; ?></div>
+                            <div class="widget-subheading"> <?= $user['username']; ?></div>
                         </div>
-                        <div class="widget-content-right header-user-info ml-3">
+                        <!-- <div class="widget-content-right header-user-info ml-3">
                             <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                                 <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

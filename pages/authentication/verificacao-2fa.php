@@ -1,46 +1,61 @@
 <?php
     if (!isset($_SESSION['two_factor_code'])) {
-        header('Location: ' . INCLUDE_PATH_AUTH . 'login');
+        // Defina uma mensagem de erro mais clara na sessão
+        $message = array(
+            'status' => 'error', 
+            'title' => 'Erro de Autenticação', 
+            'message' => 'O código de autenticação de dois fatores está ausente ou inválido. Por favor, faça login novamente para continuar.'
+        );
+        $_SESSION['msg'] = $message;
+
+        // Redireciona usuario
+        header('Location: ' . INCLUDE_PATH_AUTH);
+        exit();
     }
 ?>
-<form id="twoFactorForm">
-    <div class="modal-content">
-        <div class="modal-body">
-            <div class="h5 modal-title text-center">
-                <h4 class="mt-2">
-                    <div>Autenticação 2FA</div>
-                    <span>Insira o código enviado pelo Email.</span>
-                </h4>
-            </div>
-            <div class="form-row">
-                <div class="col-md-12">
-                    <div class="position-relative form-group mb-0">
-                        <input name="two_factor_code" id="two_factor_code"
-                            placeholder="Código 2FA aqui..." type="text" class="form-control" autocomplete="off">
-                        <button type="button" id="resendCode" class="btn btn-link mt-2 px-0">Reenviar Código...</button>
+
+<div class="modal-dialog w-100 mx-auto">
+    <form id="twoFactorForm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="h5 modal-title text-center">
+                    <h4 class="mt-2">
+                        <div>Autenticação 2FA</div>
+                        <span>Insira o código enviado pelo Email.</span>
+                    </h4>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <div class="position-relative form-group mb-0">
+                            <input name="two_factor_code" id="two_factor_code"
+                                placeholder="Código 2FA" type="text" class="form-control" autocomplete="off">
+                            <button type="button" id="resendCode" class="btn btn-link mt-2 px-0">Reenviar Código...</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer clearfix">
-            <div class="float-left">
-                <a href="<?= INCLUDE_PATH_AUTH; ?>recuperar-senha" class="btn-pill btn-hover-shine btn btn-link btn-lg">Recuperar senha</a>
-            </div>
-            <div class="float-right">
-                <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 72px;">Entrar</button>
-                <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 72px;">
-                    <div class="loader">
-                        <div class="ball-pulse">
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+            <input type="hidden" name="http_referer" value="<?= isset($_SESSION['http_referer']) ? $_SESSION['http_referer'] : null; ?>">
+            <input type="hidden" name="action" value="verify-2fa">
+            <div class="modal-footer clearfix">
+                <div class="float-left">
+                    <a href="<?= INCLUDE_PATH_AUTH; ?>recuperar-senha" class="btn-pill btn-hover-shine btn btn-link btn-lg">Recuperar senha</a>
+                </div>
+                <div class="float-right">
+                    <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 72px;">Entrar</button>
+                    <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 72px;">
+                        <div class="loader">
+                            <div class="ball-pulse">
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                            </div>
                         </div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 <script type="text/javascript">
     $(document).ready(() => {
@@ -74,7 +89,7 @@
                 success: function(response) {
                     if(response.status == "success") {
                         // Redireciona o usuário após o toastr desaparecer
-                        window.location.href = "<?= INCLUDE_PATH_DASHBOARD; ?>";
+                        window.location.href = "<?= INCLUDE_PATH_DASHBOARD . ((isset($_SESSION['http_referer']) ? $_SESSION['http_referer'] : "")); ?>";
 
                         // Desabilitar loader e habilitar botão submit
                         loginButton.removeClass("d-none");

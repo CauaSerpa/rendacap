@@ -51,59 +51,61 @@ if (isset($_GET['token'])) {
 }
 ?>
 
-<form id="resetPassForm" method="POST">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="h5 modal-title">
-                Esqueceu sua senha?
-                <h6 class="mt-1 mb-0 opacity-8">
-                    <span>Utilize o formulário abaixo para recuperá-la.</span>
-                </h6>
+<div class="modal-dialog w-100 mx-auto">
+    <form id="resetPassForm" method="POST">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="h5 modal-title">
+                    Esqueceu sua senha?
+                    <h6 class="mt-1 mb-0 opacity-8">
+                        <span>Utilize o formulário abaixo para recuperá-la.</span>
+                    </h6>
+                </div>
             </div>
-        </div>
-        <div class="modal-body">
-            <div>
-                <div class="form-row">
-                    <div class="col-md-12">
-                        <div class="position-relative form-group">
-                            <input name="password" id="password"
-                                placeholder="Senha aqui..." type="password" class="form-control">
+            <div class="modal-body">
+                <div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="position-relative form-group">
+                                <input name="password" id="password"
+                                    placeholder="Senha" type="password" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="position-relative form-group mb-0">
-                            <input name="confirm_password" id="confirm_password"
-                                placeholder="Repita a senha aqui..." type="password" class="form-control">
+                        <div class="col-md-12">
+                            <div class="position-relative form-group mb-0">
+                                <input name="confirm_password" id="confirm_password"
+                                    placeholder="Repita a senha" type="password" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="mt-1 position-relative form-check">
-                            <input name="check" id="showPasswordToggle" type="checkbox" class="form-check-input">
-                            <label for="showPasswordToggle" class="form-check-label">Exibir senha</label>
+                        <div class="col-md-12">
+                            <div class="mt-1 position-relative form-check">
+                                <input name="check" id="showPasswordToggle" type="checkbox" class="form-check-input">
+                                <label for="showPasswordToggle" class="form-check-label">Exibir senha</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between">
-            <div class="d-flex align-items-center">
-                <a href="<?= INCLUDE_PATH_AUTH; ?>login" class="btn-pill btn-hover-shine btn btn-link btn-lg px-0">Faça login na conta existente</a>
-            </div>
-            <div class="d-flex align-items-center">
-                <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 135px;">Recuperar senha</button>
-                <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 135px;">
-                    <div class="loader">
-                        <div class="ball-pulse">
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
-                            <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+            <div class="card-footer d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <a href="<?= INCLUDE_PATH_AUTH; ?>login" class="btn-pill btn-hover-shine btn btn-link btn-lg px-0">Faça login na conta existente</a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button type="submit" id="btnLogin" class="btn-pill btn-hover-shine btn btn-primary btn-lg" style="width: 135px;">Recuperar senha</button>
+                    <button id="btnLoader" class="btn-pill btn-hover-shine btn btn-primary btn-lg d-none" style="width: 135px;">
+                        <div class="loader">
+                            <div class="ball-pulse">
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                                <div style="background-color: rgb(255, 255, 255); width: 6px; height: 6px;"></div>
+                            </div>
                         </div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 <script type="text/javascript">
     $(document).ready(() => {

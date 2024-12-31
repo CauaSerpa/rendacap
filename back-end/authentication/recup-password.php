@@ -25,8 +25,8 @@
             // Envia um e-mail com o link de recuperação
             $resetLink = INCLUDE_PATH_AUTH . "atualizar-senha?token=" . $token;
             $subject = "Recuperação de Senha";
-            $message = "Olá " . $user['firstname'] . ",<br>Clique no link a seguir para redefinir sua senha:<br><a href='$resetLink'>$resetLink</a>";
-            sendMail($user['firstname'], $email, $subject, $message);
+            $content = array("layout" => "recup-password", "content" => array("firstname" => $user['firstname'], "link" => $resetLink));
+            sendMail($user['firstname'], $email, $subject, $content);
 
             // Retorna uma mensagem de sucesso
             echo json_encode(['status' => 'success']);

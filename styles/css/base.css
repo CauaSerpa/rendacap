@@ -7393,7 +7393,7 @@ button,
   align-items: center;
   transition: width .2s; }
   .app-header__logo .logo-src {
-    height: 40px;
+    height: 50px;
     width: 200px;
     background-image: url("../../images/logo-inverse.png");
     background-repeat: no-repeat;
@@ -7495,6 +7495,10 @@ button,
   .header-btn-lg .hamburger-inner::before,
   .header-btn-lg .hamburger-inner::after {
     background: #6c757d; }
+  .header-btn-lg .avatar {
+    width: 42px;
+    height: 42px;
+    object-fit: cover; }
 
 .app-header.header-text-light .app-header-left > .nav > li > .nav-link {
   color: rgba(255, 255, 255, 0.7); }
@@ -7740,7 +7744,8 @@ button,
     .vertical-nav-menu li a:hover {
       background: #e0f3ff;
       text-decoration: none; }
-      .vertical-nav-menu li a:hover i.metismenu-icon {
+      .vertical-nav-menu li a:hover i.metismenu-icon,
+      .vertical-nav-menu li a:hover span.metismenu-icon {
         opacity: .6; }
       .vertical-nav-menu li a:hover i.metismenu-state-icon {
         opacity: 1; }
@@ -7753,7 +7758,9 @@ button,
     background: #e0f3ff;
     font-weight: bold; }
   .vertical-nav-menu i.metismenu-state-icon,
-  .vertical-nav-menu i.metismenu-icon {
+  .vertical-nav-menu i.metismenu-icon,
+  .vertical-nav-menu span.metismenu-state-icon,
+  .vertical-nav-menu span.metismenu-icon {
     text-align: center;
     width: 34px;
     height: 34px;
@@ -7804,14 +7811,16 @@ button,
       background: rgba(255, 255, 255, 0.5) !important; }
   .app-sidebar.sidebar-text-light .vertical-nav-menu li a {
     color: rgba(255, 255, 255, 0.7); }
-    .app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-icon {
+    .app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-icon,
+    .app-sidebar.sidebar-text-light .vertical-nav-menu li a span.metismenu-icon {
       opacity: .5; }
     .app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-state-icon {
       opacity: .5; }
     .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover {
       background: rgba(255, 255, 255, 0.15);
       color: white; }
-      .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-icon {
+      .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-icon,
+      .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover span.metismenu-icon {
         opacity: .8; }
       .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-state-icon {
         opacity: 1; }
@@ -7846,14 +7855,16 @@ button,
       background: rgba(0, 0, 0, 0.5) !important; }
   .app-sidebar.sidebar-text-dark .vertical-nav-menu li a {
     color: rgba(0, 0, 0, 0.6); }
-    .app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-icon {
+    .app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-icon,
+    .app-sidebar.sidebar-text-dark .vertical-nav-menu li a span.metismenu-icon {
       opacity: .5; }
     .app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-state-icon {
       opacity: .5; }
     .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover {
       background: rgba(0, 0, 0, 0.15);
       color: rgba(0, 0, 0, 0.7); }
-      .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-icon {
+      .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-icon,
+      .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover span.metismenu-icon {
         opacity: .7; }
       .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-state-icon {
         opacity: 1; }
@@ -12074,6 +12085,8 @@ a.avatar-icon-wrapper:hover .avatar-icon {
   margin-bottom: 0.75rem;
   font-size: 0.968rem;
   color: rgba(13, 27, 62, 0.55); }
+  .card-subtitle.small {
+    font-size: 0.88rem; }
 
 .card-shadow-primary {
   box-shadow: 0 0.46875rem 2.1875rem rgba(63, 106, 216, 0.03), 0 0.9375rem 1.40625rem rgba(63, 106, 216, 0.03), 0 0.25rem 0.53125rem rgba(63, 106, 216, 0.05), 0 0.125rem 0.1875rem rgba(63, 106, 216, 0.03); }
@@ -14352,7 +14365,7 @@ legend {
   background: url("../../images/logo-inverse.png"); }
 
 .app-logo-inverse {
-  height: 40px;
+  height: 50px;
   width: 200px;
   background-image: url("../../images/logo.png");
   background-repeat: no-repeat;
